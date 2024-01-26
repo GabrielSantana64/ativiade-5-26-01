@@ -1,0 +1,485 @@
+questao 1
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Digite a quantidade mínima da peça: ");
+        int quantidadeMinima = LerInteiro();
+
+        Console.Write("Digite a quantidade máxima da peça: ");
+        int quantidadeMaxima = LerInteiro();
+
+        // Calcula o estoque médio
+        double estoqueMedio = CalcularEstoqueMedio(quantidadeMinima, quantidadeMaxima);
+
+        // Exibe o resultado
+        Console.WriteLine($"Estoque Médio: {estoqueMedio}");
+
+        // Aguarda o usuário pressionar Enter antes de encerrar o programa
+        Console.ReadLine();
+    }
+
+    static int LerInteiro()
+    {
+        // Função para ler um número inteiro do usuário, com tratamento de erro
+        while (true)
+        {
+            if (int.TryParse(Console.ReadLine(), out int numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número inteiro válido.");
+            }
+        }
+    }
+
+    static double CalcularEstoqueMedio(int quantidadeMinima, int quantidadeMaxima)
+    {
+        // Função para calcular o estoque médio
+        return (quantidadeMinima + quantidadeMaxima) / 2.0;
+    }
+}
+
+questao 2
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Passo 1: Solicitar a cotação do dólar
+        Console.Write("Digite a cotação do dólar: ");
+        double cotacaoDolar = LerDouble();
+
+        // Passo 2: Solicitar o valor em dólares
+        Console.Write("Digite o valor em dólares: ");
+        double valorEmDolares = LerDouble();
+
+        // Passo 3: Calcular o valor em reais
+        double valorEmReais = ConverterDolarParaReal(valorEmDolares, cotacaoDolar);
+
+        // Passo 4: Exibir o resultado
+        Console.WriteLine($"Valor em Reais: {valorEmReais:C}");
+
+        // Aguardar o usuário pressionar Enter antes de encerrar o programa
+        Console.ReadLine();
+    }
+
+    static double LerDouble()
+    {
+        // Função para ler um número decimal do usuário, com tratamento de erro
+        while (true)
+        {
+            if (double.TryParse(Console.ReadLine(), out double numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número válido.");
+            }
+        }
+    }
+
+    static double ConverterDolarParaReal(double valorEmDolares, double cotacaoDolar)
+    {
+        // Função para converter o valor em dólares para reais
+        return valorEmDolares * cotacaoDolar;
+    }
+}
+
+questao 3
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar informações do vendedor e da venda
+        Console.Write("Digite a identificação do vendedor: ");
+        string idVendedor = Console.ReadLine();
+
+        Console.Write("Digite o código da peça: ");
+        string codigoPeca = Console.ReadLine();
+
+        Console.Write("Digite o preço unitário da peça: ");
+        double precoUnitario = LerDouble();
+
+        Console.Write("Digite a quantidade vendida: ");
+        int quantidadeVendida = LerInteiro();
+
+        // Calcular o total da venda
+        double totalVenda = precoUnitario * quantidadeVendida;
+
+        // Calcular a comissão (5% do total da venda)
+        double comissao = totalVenda * 0.05;
+
+        // Exibir os resultados
+        Console.WriteLine($"Identificação do Vendedor: {idVendedor}");
+        Console.WriteLine($"Código da Peça: {codigoPeca}");
+        Console.WriteLine($"Preço Unitário da Peça: {precoUnitario:C}");
+        Console.WriteLine($"Quantidade Vendida: {quantidadeVendida}");
+        Console.WriteLine($"Total da Venda: {totalVenda:C}");
+        Console.WriteLine($"Comissão (5%): {comissao:C}");
+
+        // Aguardar o usuário pressionar Enter antes de encerrar o programa
+        Console.ReadLine();
+    }
+
+    static double LerDouble()
+    {
+        // Função para ler um número decimal do usuário, com tratamento de erro
+        while (true)
+        {
+            if (double.TryParse(Console.ReadLine(), out double numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número válido.");
+            }
+        }
+    }
+
+    static int LerInteiro()
+    {
+        // Função para ler um número inteiro do usuário, com tratamento de erro
+        while (true)
+        {
+            if (int.TryParse(Console.ReadLine(), out int numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número inteiro válido.");
+            }
+        }
+    }
+}
+
+questao 4
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar quatro valores inteiros
+        Console.Write("Digite o valor de A: ");
+        int A = LerInteiro();
+
+        Console.Write("Digite o valor de B: ");
+        int B = LerInteiro();
+
+        Console.Write("Digite o valor de C: ");
+        int C = LerInteiro();
+
+        Console.Write("Digite o valor de D: ");
+        int D = LerInteiro();
+
+        // Realizar as operações de adição e multiplicação
+        Console.WriteLine("\nResultados das operações de adição:");
+        Console.WriteLine($"A + B = {A + B}");
+        Console.WriteLine($"A + C = {A + C}");
+        Console.WriteLine($"A + D = {A + D}");
+        Console.WriteLine($"B + C = {B + C}");
+        Console.WriteLine($"B + D = {B + D}");
+        Console.WriteLine($"C + D = {C + D}");
+
+        Console.WriteLine("\nResultados das operações de multiplicação:");
+        Console.WriteLine($"A * B = {A * B}");
+        Console.WriteLine($"A * C = {A * C}");
+        Console.WriteLine($"A * D = {A * D}");
+        Console.WriteLine($"B * C = {B * C}");
+        Console.WriteLine($"B * D = {B * D}");
+        Console.WriteLine($"C * D = {C * D}");
+
+        // Aguardar o usuário pressionar Enter antes de encerrar o programa
+        Console.ReadLine();
+    }
+
+    static int LerInteiro()
+    {
+        // Função para ler um número inteiro do usuário, com tratamento de erro
+        while (true)
+        {
+            if (int.TryParse(Console.ReadLine(), out int numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número inteiro válido.");
+            }
+        }
+    }
+}
+
+questao 5
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar o tempo gasto na viagem em horas
+        Console.Write("Digite o tempo gasto na viagem (em horas): ");
+        double tempoViagem = LerDouble();
+
+        // Solicitar a velocidade média em Km/h
+        Console.Write("Digite a velocidade média (em Km/h): ");
+        double velocidadeMedia = LerDouble();
+
+        // Calcular a distância percorrida (DISTANCIA = TEMPO * VELOCIDADE)
+        double distanciaPercorrida = tempoViagem * velocidadeMedia;
+
+        // Calcular a quantidade de litros de combustível utilizada (LITROS USADOS = DISTANCIA / 12)
+        double litrosUsados = distanciaPercorrida / 12;
+
+        // Exibir os resultados
+        Console.WriteLine($"\nVelocidade Média: {velocidadeMedia} Km/h");
+        Console.WriteLine($"Tempo Gasto na Viagem: {tempoViagem} horas");
+        Console.WriteLine($"Distância Percorrida: {distanciaPercorrida} Km");
+        Console.WriteLine($"Quantidade de Litros Utilizada: {litrosUsados:F2} litros");
+
+        // Aguardar o usuário pressionar Enter antes de encerrar o programa
+        Console.ReadLine();
+    }
+
+    static double LerDouble()
+    {
+        // Função para ler um número decimal do usuário, com tratamento de erro
+        while (true)
+        {
+            if (double.TryParse(Console.ReadLine(), out double numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número válido.");
+            }
+        }
+    }
+}
+
+questao 6
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar a temperatura em graus Celsius
+        Console.Write("Digite a temperatura em graus Celsius: ");
+        double temperaturaCelsius = LerDouble();
+
+        // Calcular a temperatura em graus Fahrenheit (F = (9 * C + 160) / 5)
+        double temperaturaFahrenheit = (9 * temperaturaCelsius + 160) / 5;
+
+        // Exibir o resultado
+        Console.WriteLine($"\nTemperatura em Fahrenheit: {temperaturaFahrenheit:F2} °F");
+
+        // Aguardar o usuário pressionar Enter antes de encerrar o programa
+        Console.ReadLine();
+    }
+
+    static double LerDouble()
+    {
+        // Função para ler um número decimal do usuário, com tratamento de erro
+        while (true)
+        {
+            if (double.TryParse(Console.ReadLine(), out double numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número válido.");
+            }
+        }
+    }
+}
+
+questao 7
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar a temperatura em graus Fahrenheit
+        Console.Write("Digite a temperatura em graus Fahrenheit: ");
+        double temperaturaFahrenheit = LerDouble();
+
+        // Calcular a temperatura em graus Celsius (C = (F - 32) * 5/9)
+        double temperaturaCelsius = (temperaturaFahrenheit - 32) * 5 / 9;
+
+        // Exibir o resultado
+        Console.WriteLine($"\nTemperatura em Celsius: {temperaturaCelsius:F2} °C");
+
+        // Aguardar o usuário pressionar Enter antes de encerrar o programa
+        Console.ReadLine();
+    }
+
+    static double LerDouble()
+    {
+        // Função para ler um número decimal do usuário, com tratamento de erro
+        while (true)
+        {
+            if (double.TryParse(Console.ReadLine(), out double numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número válido.");
+            }
+        }
+    }
+}
+
+questao 8
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar o raio da lata de óleo
+        Console.Write("Digite o raio da lata de óleo: ");
+        double raio = LerDouble();
+
+        // Solicitar a altura da lata de óleo
+        Console.Write("Digite a altura da lata de óleo: ");
+        double altura = LerDouble();
+
+        // Calcular o volume da lata de óleo (V = 3.14159 * R * R * A)
+        double volume = 3.14159 * raio * raio * altura;
+
+        // Exibir o resultado
+        Console.WriteLine($"\nVolume da lata de óleo: {volume:F2} unidades cúbicas");
+
+        // Aguardar o usuário pressionar Enter antes de encerrar o programa
+        Console.ReadLine();
+    }
+
+    static double LerDouble()
+    {
+        // Função para ler um número decimal do usuário, com tratamento de erro
+        while (true)
+        {
+            if (double.TryParse(Console.ReadLine(), out double numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número válido.");
+            }
+        }
+    }
+}
+
+questao 9
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar a idade em anos
+        Console.Write("Digite a idade em anos: ");
+        int anos = LerInteiro();
+
+        // Solicitar a idade em meses
+        Console.Write("Digite a idade em meses: ");
+        int meses = LerInteiro();
+
+        // Solicitar a idade em dias
+        Console.Write("Digite a idade em dias: ");
+        int dias = LerInteiro();
+
+        // Calcular a idade total em dias
+        int idadeEmDias = anos * 365 + meses * 30 + dias;
+
+        // Exibir o resultado
+        Console.WriteLine($"\nA idade em dias é: {idadeEmDias} dias");
+
+        // Aguardar o usuário pressionar Enter antes de encerrar o programa
+        Console.ReadLine();
+    }
+
+    static int LerInteiro()
+    {
+        // Função para ler um número inteiro do usuário, com tratamento de erro
+        while (true)
+        {
+            if (int.TryParse(Console.ReadLine(), out int numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número inteiro válido.");
+            }
+        }
+    }
+}
+
+questao 10
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar o primeiro número inteiro
+        Console.Write("Digite o primeiro número inteiro: ");
+        int numero1 = LerInteiro();
+
+        // Solicitar o segundo número inteiro
+        Console.Write("Digite o segundo número inteiro: ");
+        int numero2 = LerInteiro();
+
+        // Verificar os relacionamentos de ordem
+        Console.WriteLine("\nRelacionamentos de ordem:");
+        VerificarRelacionamentos(numero1, numero2);
+
+        // Aguardar o usuário pressionar Enter antes de encerrar o programa
+        Console.ReadLine();
+    }
+
+    static int LerInteiro()
+    {
+        // Função para ler um número inteiro do usuário, com tratamento de erro
+        while (true)
+        {
+            if (int.TryParse(Console.ReadLine(), out int numero))
+            {
+                return numero;
+            }
+            else
+            {
+                Console.WriteLine("Por favor, insira um número inteiro válido.");
+            }
+        }
+    }
+
+    static void VerificarRelacionamentos(int a, int b)
+    {
+        // Verificar e exibir os relacionamentos de ordem
+        Console.WriteLine($"Igual: {a == b}");
+        Console.WriteLine($"Não igual: {a != b}");
+        Console.WriteLine($"Maior: {a > b}");
+        Console.WriteLine($"Menor: {a < b}");
+        Console.WriteLine($"Maior ou igual: {a >= b}");
+        Console.WriteLine($"Menor ou igual: {a <= b}");
+    }
+}
